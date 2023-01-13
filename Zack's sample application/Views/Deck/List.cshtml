@@ -1,0 +1,18 @@
+﻿@model DeckListViewModel
+
+@{
+	Layout = "_Layout";
+}
+
+<h1>@Model.CurrentCategory</h1>
+	@foreach(var deck in Model.Decks)
+	{
+		<div>
+			<h2>
+				<a class="deck-link" asp-controller="Deck" asp-action="Details" asp-route-id="@deck.DeckId" >@deck.Name</a>
+			</h2>
+			<h3>deck.Price</h3>
+			<h4>deck.CategoryName</h4>
+		</div>
+	}
+
